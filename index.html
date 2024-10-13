@@ -8,118 +8,87 @@
 </head>
 
 <body>
-    <div id="form">
-        <div>
-            <h3>Personal Details</h3>
-            <table>
-                <tbody>
-                    <tr>
-                        <td><label for="form-name">Your Name:</label></td>
-                        <td><input type="text" id="form-name" onchange="changeName();" /></td>
-                    </tr>
-                    <tr>
-                        <td><label for="form-contact">Contact:</label></td>
-                        <td><input type="text" id="form-contact" onchange="changeContact();" /></td>
-                    </tr>
-                    <tr>
-                        <td><label for="form-linkedin-profile">LinkedIn Profile:</label></td>
-                        <td><input type="text" id="form-linkedin-profile" onchange="changeLinkedinProfile();" /></td>
-                    </tr>
-                    <tr>
-                        <td><label for="form-email">Email:</label></td>
-                        <td><input type="text" id="form-email" onchange="changeEmail();" /></td>
-                        
-                    </tr>
-                    <tr>
-                        <td><label for="form-address">Address:</label></td>
-                        <td><input type="text" id="form-address" onchange="changeAddress();" /></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div>
-            <h3>Skills</h3>
-            <div id="form-skills">
-                <div>
-                    <input type="text" id="added-skill"/><button id="add-btn" onclick="addSkill()">+</button>
-                </div>
+    <div id="resume">
+        <h1>Shah Faisal</h1>
+        <div id="personal-details">
+            <hr>
+            <div class="heading">
+                <h2> Personal Details</h2>
+                <button id="pd-button" onclick="toggleDetailsVisibility('pd');">▲</button>
+            </div>
+            <div class="personal-details" id="pd">
+                    <div>
+                        <div class="label">Contact</div>
+                        <div id="contact">03330377686</div>
+                    </div>
+                    <div>
+                        <div class="label">LinkedIn</div>
+                        <div id="linkedin-profile">/in/ShahFaisalIslam</div>
+                    </div>
+                    <div>
+                        <div class="label">Email</div>
+                        <div id="email">faisal.islam.ceme@gmail.com</div>
+                    </div>
+                    <div>
+                        <div class="label">Address</div>
+                        <div id="address">First floor, Plot R-402, Samanabad, F.B. Area Bock 18, Karachi Central</div>
+                    </div>
             </div>
         </div>
-    </div>
-    <button id="submit-button" onclick="changePersonalDetails()">Submit</button>
-    <div id="resume" hidden>
-        <h1>Shah Faisal</h1>
-        <hr>
-        <h2>Personal Details <button id="pd-button" onclick="toggleDetailsVisibility('pd');">Hide</button></h2>
-        <div id="pd">
-            <table>
-                <tbody>
-                    <tr>
-                        <td>Contact</td>
-                        <td id="contact">03330377686</td>
-                    </tr>
-                    <tr>
-                        <td>LinkedIn</td>
-                        <td id="linkedin-profile">/in/ShahFaisalIslam</td>
-                    </tr>
-                    <tr>
-                        <td>Email</td>
-                        <td id="email">faisal.islam.ceme@gmail.com</td>
-                    </tr>
-                    <tr>
-                        <td>Address</td>
-                        <td id="address">First floor, Plot R-402, Samanabad, F.B. Area Bock 18, Karachi Central</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div id="skills">
+            <hr>
+            <div class="heading">
+                <h2>Skills</h2>
+                <button id="sk-button" onclick="toggleDetailsVisibility('sk');">▲</button>
+            </div>
+            <div id="sk">
+                <ul class="sk-list">
+                    <li class="skill">HTML</li>
+                    <li class="skill">JavaScript</li>
+                    <li class="skill">TypeScript</li>
+                    <li class="skill">C/C++</li>
+                </ul>
+            </div>
         </div>
-        <hr>
-        <h2>Skills <button id="sk-button" onclick="toggleDetailsVisibility('sk');">Hide</button></h2>
-        <div id="sk">
-            <table>
-                <tbody>
-                    <tr id="skills-list">
-                        <td name="skill">HTML</td>
-                        <td name="skill">JavaScript</td>
-                        <td name="skill">TypeScript</td>
-                        <td name="skill">C/C++</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div id="experience">
+            <hr>
+            <div class="heading">
+                <h2>Experience</h2>
+                <button id="ex-button" onclick="toggleDetailsVisibility('ex');">▲</button>
+            </div>
+            <div id="ex">
+                <h3>7G-Fuse SMC Pvt. Ltd.</h3>
+                <h4>Senior Software Engineer 2019-Current</h4>
+                <ul>
+                    <li>Led development of network interfaces bonding solution on UDP</li>
+                    <li>Developed Network Interface Statistics Module</li>
+                    <li>Developed Network Interface Usage Quota Module</li>
+                </ul>
+            </div>
         </div>
-        <hr>
-        <h2>Experience <button id="ex-button" onclick="toggleDetailsVisibility('ex');">Hide</button></h2>
-        <div id="ex">
-            <h3>7G-Fuse SMC Pvt. Ltd.</h3>
-            <h4>Senior Software Engineer 2019-Current</h4>
-            <ul>
-                <li>Led development of network interfaces bonding solution on UDP</li>
-                <li>Developed Network Interface Statistics Module</li>
-                <li>Developed Network Interface Usage Quota Module</li>
-            </ul>
-        </div>
-        <hr>
-        <h2>Education <button id="ed-button" onclick="toggleDetailsVisibility('ed');">Hide</button></h2>
-        <div id="ed">
-            <table>
-                <tbody class="education">
-                    <tr>
-                        <td>NUST</td>
-                        <td>BE Mechatronics</td>
-                        <td>2015-2019</td>
-                    </tr>
-                    <tr>
-                        <td>Cambridge</td>
-                        <td>GCE A Levels</td>
-                        <td>2013-2015</td>
-                    </tr>
-                    <tr>
-                        <td>Cambridge</td>
-                        <td>IGCSE (Equivalent to O Levels)</td>
-                        <td>2011-2013</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div id="education">
+            <hr>
+            <div class="heading">
+                <h2>Education</h2>
+                <button id="ed-button" onclick="toggleDetailsVisibility('ed');">▲</button>
+            </div>
+            <div class="qualification-details" id="ed">
+                    <div>
+                        <div class="label">NUST</div>
+                        <div class="qua-title-label">BE Mechatronics</div>
+                        <div>2015-2019</div>
+                    </div>
+                    <div>
+                        <div class="label">Cambridge</div>
+                        <div class="qua-title-label">GCE A Levels</div>
+                        <div>2013-2015</div>
+                    </div>
+                    <div>
+                        <div class="label">Cambridge</div>
+                        <div class="qua-title-label">IGCSE (Equivalent to O Levels)</div>
+                        <div>2011-2013</div>
+                    </div>
+            </div>
         </div>
     </div>
 </body>

@@ -1,20 +1,53 @@
-td {
-    font-size: 0.85em;
-}
-h2 {
-    font-size: 1.5em;
-}
-h3 {
-    font-size: 1em;
-}
-h4 {
-    font-size: 0.9em;
-}
-li {
-    font-size: 0.85em;
-    font-style: italic;
+.heading {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-.education {
-    font-size: 1.1em;
+button {
+    border: none;
+    border-radius: 100%;
+    padding: 0.3rem;
+}
+.sk-list {
+    display: flex;
+    gap: 0.5rem;
+    list-style: none;
+}
+
+.skill {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    border-radius: 0.5rem;
+    background-color: rgb(228, 224, 224);
+}
+
+.personal-details {
+    display: table;
+}
+
+.personal-details > div {
+    display: table-row;
+}
+
+.personal-details > div > div {
+    display: table-cell;
+    padding-right: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+.qualification-details {
+    display: table;
+}
+
+.qualification-details > div {
+    display: table-row;
+}
+
+.qualification-details > div > div {
+    display: table-cell;
+    padding-right: 1rem;
+    padding-bottom: 0.5rem;
 }
