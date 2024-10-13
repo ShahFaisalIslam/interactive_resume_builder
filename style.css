@@ -9,6 +9,11 @@ button {
     border-radius: 100%;
     padding: 0.3rem;
 }
+
+button:hover {
+    background-color: rgb(200, 200, 200);
+}
+
 .sk-list {
     display: flex;
     gap: 0.5rem;
