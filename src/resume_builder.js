@@ -25,3 +25,12 @@ function toggleDetailsVisibility(id) {
         }
     }
 }
+const handleSubmit = () => {
+    const formElement = document.getElementById('form');
+    const resumeElement = document.getElementById('resume');
+    if (formElement && resumeElement) {
+        formElement.style.display = 'none';
+        resumeElement.style.display = 'unset';
+    }
+    return false;
+};

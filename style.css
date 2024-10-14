@@ -14,13 +14,13 @@ button:hover {
     background-color: rgb(200, 200, 200);
 }
 
-.sk-list {
+#sk > ul {
     display: flex;
     gap: 0.5rem;
     list-style: none;
 }
 
-.skill {
+#sk > ul > li {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     padding-top: 0.25rem;
@@ -30,17 +30,17 @@ button:hover {
 }
 
 .personal-details {
-    display: table;
+    display: flex;
+    flex-direction: column;
 }
 
 .personal-details > div {
-    display: table-row;
+    display: flex;
 }
 
 .personal-details > div > div {
-    display: table-cell;
-    padding-right: 1rem;
-    padding-bottom: 0.5rem;
+    min-width: 5rem;
+    padding: 0.2rem 0.2rem 0.2rem 0;
 }
 
 .qualification-details {
