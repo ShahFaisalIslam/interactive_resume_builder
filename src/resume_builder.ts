@@ -26,7 +26,37 @@ const handleSubmit = () => {
     const resumeElement = document.getElementById('resume');
     if (formElement && resumeElement) {
         formElement.style.display = 'none';
-        resumeElement.style.display = 'unset';
+        buildResume();
     }
     return false;
 }
+
+const addSection = (parent: HTMLElement, section: HTMLElement) => {
+    parent.appendChild(document.createElement('hr'));
+    parent.appendChild(section);
+}
+
+const buildResume = () => {
+    const resumeElement = <HTMLDivElement> document.getElementById('resume');
+
+    let divList : HTMLElement[] = [];
+
+    
+    // Personal Details
+    divList.push(getPersonalDetails());
+    
+    // Skills
+    divList.push(getSkillsElement());
+
+    // Experience
+    divList.push(getExperiences());
+
+    // Education
+    divList.push(getEducation());
+    
+    // Title
+    resumeElement.appendChild(getResumeTitle());
+
+    divList.map((div) => addSection(resumeElement,div));
+
+};

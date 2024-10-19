@@ -14,13 +14,13 @@ button:hover {
     background-color: rgb(200, 200, 200);
 }
 
-#sk > ul {
+#skills-body > ul {
     display: flex;
     gap: 0.5rem;
     list-style: none;
 }
 
-#sk > ul > li {
+#skills-body > ul > li {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     padding-top: 0.25rem;
@@ -29,30 +29,31 @@ button:hover {
     background-color: rgb(228, 224, 224);
 }
 
-.personal-details {
+#personal-details-body {
     display: flex;
     flex-direction: column;
 }
 
-.personal-details > div {
+#personal-details-body > div {
     display: flex;
 }
 
-.personal-details > div > div {
+#personal-details-body > div > div {
     min-width: 5rem;
     padding: 0.2rem 0.2rem 0.2rem 0;
 }
 
-.qualification-details {
+#education-body {
     display: table;
 }
 
-.qualification-details > div {
+#education-body > div {
     display: table-row;
 }
 
-.qualification-details > div > div {
+#education-body > div > div {
     display: table-cell;
     padding-right: 1rem;
     padding-bottom: 0.5rem;
 }
+

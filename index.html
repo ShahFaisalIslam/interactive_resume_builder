@@ -4,34 +4,46 @@
 <head>
     <title>Interactive Resume Builder</title>
     <link rel="stylesheet" href="style.css">
+    <script src="src/resume_builder_helper.js"></script>
+    <script src="src/resumeData.js"></script>
+    <script src="src/personal_details.js"></script>
+    <script src="src/skills.js"></script>
+    <script src="src/experiences.js"></script>
+    <script src="src/education.js"></script>
     <script src="src/resume_builder.js"></script>
 </head>
 
 <body>
+    <form id="form" onsubmit="return handleSubmit();">
+        <input type="submit"/>
+    </form>
     <div id="resume">
-        <h1>Shah Faisal</h1>
-        <div id="personal-details">
+
+    </div>
+    <div id="resumer" style="display: none;">
+        <h1 id="namer">Shah Faisal</h1>
+        <div id="personal-detailsr">
             <hr>
             <div class="heading">
                 <h2> Personal Details</h2>
-                <button id="pd-button" onclick="toggleDetailsVisibility('pd');">▲</button>
+                <button id="pd-buttonr" onclick="toggleDetailsVisibility('pd');">▲</button>
             </div>
-            <div class="personal-details" id="pd">
+            <div class="personal-details" id="pdr">
                     <div>
                         <div>Contact</div>
-                        <div id="contact">03330377686</div>
+                        <div id="contactr">03330377686</div>
                     </div>
                     <div>
                         <div>LinkedIn</div>
-                        <div id="linkedin-profile">/in/ShahFaisalIslam</div>
+                        <div id="linkedin-profiler">/in/ShahFaisalIslam</div>
                     </div>
                     <div>
                         <div>Email</div>
-                        <div id="email">faisal.islam.ceme@gmail.com</div>
+                        <div id="emailr">faisal.islam.ceme@gmail.com</div>
                     </div>
                     <div>
                         <div>Address</div>
-                        <div id="address">First floor, Plot R-402, Samanabad, F.B. Area Bock 18, Karachi Central</div>
+                        <div id="addressr">First floor, Plot R-402, Samanabad, F.B. Area Bock 18, Karachi Central</div>
                     </div>
             </div>
         </div>
