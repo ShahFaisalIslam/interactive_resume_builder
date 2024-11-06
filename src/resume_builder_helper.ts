@@ -40,6 +40,7 @@ const getHeadingElement = (heading: string, bodyId: string) => {
 
     let showHideButton = <HTMLButtonElement>getElement({
         id: `${bodyId}-button`,
+        className: 'circle',
         tag: 'button',
         innerText: "▲"
     });

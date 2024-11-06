@@ -5,7 +5,7 @@ const getSkillsElement = () => {
         heading: "Skills",
     });
     let skillsListElement = getElement({ tag: 'ul' });
-    sampleResumeData.skills.map((skill) => skillsListElement.appendChild(getElement({ innerText: skill, tag: 'li' })));
+    savedResumeData.skills.map((skill) => skillsListElement.appendChild(getElement({ innerText: skill, tag: 'li' })));
     skillsElement.appendChild(skillsListElement);
     return containerElement;
 };

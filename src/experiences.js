@@ -15,6 +15,6 @@ const addExperience = (parent, experience) => {
 };
 const getExperiences = () => {
     let [containerElement, experiencesElement] = getSection({ id: 'experience', heading: "Experience" });
-    sampleResumeData.experiences.map((experience) => addExperience(experiencesElement, experience));
+    savedResumeData.experiences.map((experience) => addExperience(experiencesElement, experience));
     return containerElement;
 };

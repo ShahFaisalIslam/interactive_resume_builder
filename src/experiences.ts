@@ -16,6 +16,6 @@ const addExperience = (parent:HTMLDivElement,experience: ExperienceData) => {
 
 const getExperiences = () => {
     let [containerElement,experiencesElement] = <[HTMLDivElement,HTMLDivElement]>getSection({id:'experience',heading:"Experience"});
-    sampleResumeData.experiences.map((experience) => addExperience(experiencesElement,experience));
+    savedResumeData.experiences.map((experience) => addExperience(experiencesElement,experience));
     return containerElement;
 }

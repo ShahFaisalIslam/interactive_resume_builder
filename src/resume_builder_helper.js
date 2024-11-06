@@ -22,6 +22,7 @@ const getHeadingElement = (heading, bodyId) => {
     let headingElement = getElement({ tag: 'h2', innerText: heading });
     let showHideButton = getElement({
         id: `${bodyId}-button`,
+        className: 'circle',
         tag: 'button',
         innerText: "▲"
     });

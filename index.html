@@ -4,6 +4,7 @@
 <head>
     <title>Interactive Resume Builder</title>
     <link rel="stylesheet" href="style.css">
+    <script src="src/form.js"></script>
     <script src="src/resume_builder_helper.js"></script>
     <script src="src/resumeData.js"></script>
     <script src="src/personal_details.js"></script>
@@ -14,13 +15,90 @@
 </head>
 
 <body>
-    <form id="form" onsubmit="return handleSubmit();">
-        <input type="submit"/>
-    </form>
-    <div id="resume">
-
+    <div class="form-container">
+        <form onsubmit="return submitForm();">
+            <div id="form" class="slide-in-left">
+                <h1>Interactive Resume Builder - Form</h1>
+                <hr>
+                <h2>Section 1 - Personal Details</h2>
+                <div class="form-section" id="personal-details-section">
+                    <label for="name">Name</label>
+                    <input required type="text" maxlength="46" />
+                    <label for="contact">Contact</label>
+                    <input required type="tel" pattern="\+923[0-9]{9}" maxlength="13" placeholder="+923xxxxxxxxx" />
+                    <label for="linkedin-url">LinkedIn Url</label>
+                    <input required type="text" pattern="/in/.+" placeholder="/in/XXXXXXXXX" />
+                    <label for="email">Email</label>
+                    <input required type="email" />
+                    <label for="address">Address</label>
+                    <textarea style="resize: none;" rows="5"></textarea>
+                </div>
+                <input class="save-button" type="button" id="personal-details-button" onclick="saveOrEdit('personal-details');" value="Save" />
+                <hr>
+                <h2>Section 2 - Skills</h2>
+                <div class="form-section" id="skills-section">
+                    <div id="skills-field-list">
+                        <div>
+                            <input required type="text" />
+                            <button onclick="addFieldList('skills');">+</button>
+                        </div>
+    
+                    </div>
+                </div>
+                <input class="save-button" type="button" id="skills-button" onclick="saveOrEdit('skills');" value="Save"/>
+                <hr>
+                <h2>Section 3 - Experience</h2>
+                <div class="form-section" id="experience-section">
+                    <div>
+                        <!-- Location -->
+                        <label>Location</label><br>
+                        <input required type="text" /><br>
+                        <!-- Job Title -->
+                        <label>Job Title</label><br>
+                        <input required type="text" /><br>
+    
+                        <!-- Start Year - End Year -->
+                        <label>Start Year</label><br>
+                        <input required type="number" /><br>
+                        <label>End Year</label><br>
+                        <input type="number" /><br>
+                        <!-- Points => Point, +/- button -->
+                         <label>Points</label>
+                         <div id="points-1-field-list">
+                             <div>
+                                 <input required type="text" />
+                                 <button onclick="addFieldList('points-1')">+</button>
+                             </div>
+                         </div>
+                        <!-- Add Experience Button -->
+                        <button onclick="addSubSection('experience');">Add Experience</button>
+                    </div>
+                </div>
+                <input class="save-button" type="button" id="experience-button" onclick="saveOrEdit('experience');" value="Save" />
+                <hr>
+                <h2>Section 4 - Education</h2>
+                <div class="form-section" id="education-section">
+                    <div>
+                        <!-- Institute -->
+                        <label>Institute</label><br>
+                        <input required type="text" /><br>
+                        <!-- Qualification -->
+                        <label>Qualification</label><br>
+                        <input required type="text" /><br>
+                        <!-- Start Year - End Year -->
+                        <label>Start Year</label><br><input required type="number" /><br>
+                        <label>End Year</label><br><input type="number"/><br>
+                        <button onclick="addSubSection('education')">Add Education</button>
+                    </div>
+                </div>
+                <input class="save-button" type="button" id="education-button" onclick="saveOrEdit('education');" value="Save" />
+                <hr>
+                <!-- <button onclick="submit();">Submit</button> -->
+                <input type="submit"/>
+            </div>
+        </form>
     </div>
-    <div id="resumer" style="display: none;">
+    <!-- <div id="resumer" style="display: none;">
         <h1 id="namer">Shah Faisal</h1>
         <div id="personal-detailsr">
             <hr>
@@ -47,13 +125,13 @@
                     </div>
             </div>
         </div>
-        <div id="skills">
+        <div id="skillsr">
             <hr>
             <div class="heading">
                 <h2>Skills</h2>
-                <button id="sk-button" onclick="toggleDetailsVisibility('sk');">▲</button>
+                <button id="sk-buttonr" onclick="toggleDetailsVisibility('sk');">▲</button>
             </div>
-            <div id="sk">
+            <div id="skr">
                 <ul>
                     <li>HTML</li>
                     <li>JavaScript</li>
@@ -62,13 +140,13 @@
                 </ul>
             </div>
         </div>
-        <div id="experience">
+        <div id="experiencer">
             <hr>
             <div class="heading">
                 <h2>Experience</h2>
-                <button id="ex-button" onclick="toggleDetailsVisibility('ex');">▲</button>
+                <button id="ex-buttonr" onclick="toggleDetailsVisibility('ex');">▲</button>
             </div>
-            <div id="ex">
+            <div id="exr">
                 <h3>7G-Fuse SMC Pvt. Ltd.</h3>
                 <h4>Senior Software Engineer 2019-Current</h4>
                 <ul>
@@ -78,13 +156,13 @@
                 </ul>
             </div>
         </div>
-        <div id="education">
+        <div id="educationr">
             <hr>
             <div class="heading">
                 <h2>Education</h2>
-                <button id="ed-button" onclick="toggleDetailsVisibility('ed');">▲</button>
+                <button id="ed-buttonr" onclick="toggleDetailsVisibility('ed');">▲</button>
             </div>
-            <div class="qualification-details" id="ed">
+            <div class="qualification-details" id="edr">
                     <div>
                         <div>NUST</div>
                         <div>BE Mechatronics</div>
@@ -102,7 +180,10 @@
                     </div>
             </div>
         </div>
-    </div>
+    </div> -->
+    <script>
+        initializeForm();
+    </script>
 </body>
 
 </html>

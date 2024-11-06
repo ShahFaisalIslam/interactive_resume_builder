@@ -23,6 +23,6 @@ const getEducation = () => {
         heading: "Education"
     });
 
-    sampleResumeData.education.map((education) => addEducation(educationElement,education));
+    savedResumeData.education.map((education) => addEducation(educationElement,education));
     return containerElement;
 }

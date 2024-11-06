@@ -1,7 +1,7 @@
 "use strict";
 ;
 ;
-let sampleResumeData = {
+const sampleResumeData = {
     personalDetails: {
         name: "Shah Faisal",
         contact: "+923330377686",
@@ -52,4 +52,16 @@ let sampleResumeData = {
                 endYear: 2013
             }
         }]
+};
+let savedResumeData = {
+    education: [],
+    experiences: [],
+    personalDetails: {
+        address: '',
+        contact: '',
+        email: '',
+        linkedinProfile: '',
+        name: ''
+    },
+    skills: []
 };

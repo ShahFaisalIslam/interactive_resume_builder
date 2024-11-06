@@ -31,7 +31,7 @@ interface ResumeData {
     education: EducationData[];
 };
 
-let sampleResumeData: ResumeData = {
+const sampleResumeData: ResumeData = {
     personalDetails: {
         name: "Shah Faisal",
         contact: "+923330377686",
@@ -83,3 +83,16 @@ let sampleResumeData: ResumeData = {
         }
     }]
 }
+
+let savedResumeData: ResumeData = {
+    education: [],
+    experiences: [],
+    personalDetails: {
+        address: '',
+        contact: '',
+        email: '',
+        linkedinProfile: '',
+        name: ''
+    },
+    skills: []
+};
