@@ -219,7 +219,7 @@ const addSubSection = (section: string) => {
 
 // Dummy purposes only
 const initializeForm = () => {
-    // return;
+    return;
 
     let personalDetails = <HTMLElement>document.getElementById('personal-details-section');
 
