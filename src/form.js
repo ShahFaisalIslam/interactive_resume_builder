@@ -198,7 +198,7 @@ const addSubSection = (section) => {
 };
 // Dummy purposes only
 const initializeForm = () => {
-    return;
+    // return;
     let personalDetails = document.getElementById('personal-details-section');
     // Personal Details
     let personalDetailsInputs = personalDetails.querySelectorAll('input');

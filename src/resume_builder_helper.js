@@ -7,12 +7,14 @@ const getElement = (data) => {
         element.className = data.className;
     if (data.innerText)
         element.innerText = data.innerText;
+    if (data.contentEditable)
+        element.contentEditable = data.contentEditable;
     return element;
 };
 const getLabelledValueDiv = (id, label, value) => {
     let containerDiv = getElement({ tag: "div" });
     let labelDiv = getElement({ tag: "div", innerText: label });
-    let valueDiv = getElement({ tag: "div", id: id, innerText: value });
+    let valueDiv = getElement({ tag: "div", id: id, innerText: value, contentEditable: "true" });
     containerDiv.appendChild(labelDiv);
     containerDiv.appendChild(valueDiv);
     return containerDiv;
@@ -37,7 +39,8 @@ const getSection = (sectionData) => {
     let headingElement = getHeadingElement(sectionData.heading, bodyId);
     let bodyData = {
         id: bodyId,
-        tag: 'div'
+        tag: 'div',
+        contentEditable: "true"
     };
     let bodyElement = getElement(bodyData);
     containerElement.appendChild(headingElement);

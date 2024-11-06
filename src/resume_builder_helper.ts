@@ -2,6 +2,7 @@ interface ElementData {
     id?: string;
     className?: string;
     innerText?: string;
+    contentEditable?: "true" | "false" | null;
     tag: string;
 }
 
@@ -17,6 +18,9 @@ const getElement = (data: ElementData) => {
     if (data.innerText)
         element.innerText = data.innerText;
 
+    if (data.contentEditable)
+        element.contentEditable = data.contentEditable;
+
     return element;
 }
 
@@ -24,7 +28,7 @@ const getLabelledValueDiv = (id: string, label: string, value: string) => {
     let containerDiv = <HTMLDivElement>getElement({ tag: "div" });
 
     let labelDiv = <HTMLDivElement> getElement({tag: "div",innerText: label});
-    let valueDiv = <HTMLDivElement> getElement({tag: "div",id : id, innerText: value});
+    let valueDiv = <HTMLDivElement> getElement({tag: "div",id : id, innerText: value, contentEditable: "true"});
 
     containerDiv.appendChild(labelDiv);
     containerDiv.appendChild(valueDiv);
@@ -61,9 +65,10 @@ const getSection = (sectionData : SectionData) => {
     let containerElement : HTMLDivElement = <HTMLDivElement> getElement({id: sectionData.id,tag: 'div'});
     let bodyId : string = `${sectionData.id}-body`;
     let headingElement = getHeadingElement(sectionData.heading,bodyId);
-    let bodyData : {id: string;tag:string;className?: string}= {
+    let bodyData : ElementData = {
         id: bodyId,
-        tag: 'div'
+        tag: 'div',
+        contentEditable: "true"        
     };
 
     let bodyElement = getElement(bodyData);

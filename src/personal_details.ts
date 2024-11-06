@@ -2,7 +2,8 @@
 const getResumeTitle = () : HTMLHeadingElement => {
     return <HTMLHeadingElement> getElement({
         tag: "h1",
-        innerText: savedResumeData.personalDetails.name
+        innerText: savedResumeData.personalDetails.name,
+        contentEditable: "true"
     });
 }
 
