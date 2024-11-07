@@ -14,6 +14,7 @@ const submitForm = () => {
     formContainer = <HTMLElement>formContainer;
     formContainer.className = "slide-out-right";
     window.setTimeout(() => {
+        savedResumeData.username = (<HTMLInputElement>document.getElementById('username')).value.toLowerCase();
         formContainer.remove();
         let titleElement: HTMLElement = <HTMLElement>document.createElement('div');
         titleElement.id = "resume";
@@ -220,7 +221,7 @@ const addSubSection = (section: string) => {
 
 // Dummy purposes only
 const initializeForm = () => {
-    return;
+    // return;
 
     let personalDetails = <HTMLElement>document.getElementById('personal-details-section');
 

@@ -1,6 +1,7 @@
 "use strict";
 const shareLink = () => {
-    navigator.clipboard.writeText(window.location.href);
+    const link = window.location.href + "/resume/" + savedResumeData.username;
+    navigator.clipboard.writeText(link);
     alert("Link copied!");
 };
 const downloadPdf = () => {

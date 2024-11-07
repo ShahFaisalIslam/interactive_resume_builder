@@ -25,6 +25,7 @@ interface EducationData {
 };
 
 interface ResumeData {
+    username ?: string;
     personalDetails: PersonalDetails;
     skills: string[];
     experiences: ExperienceData[];

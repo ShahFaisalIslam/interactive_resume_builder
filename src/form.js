@@ -13,6 +13,7 @@ const submitForm = () => {
     formContainer = formContainer;
     formContainer.className = "slide-out-right";
     window.setTimeout(() => {
+        savedResumeData.username = document.getElementById('username').value.toLowerCase();
         formContainer.remove();
         let titleElement = document.createElement('div');
         titleElement.id = "resume";

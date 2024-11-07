@@ -23,6 +23,13 @@
             <div id="form" class="slide-in-left">
                 <h1>Interactive Resume Builder - Form</h1>
                 <hr>
+                <div>
+                    <label for="username">Username:</label>
+                    <input type="text" name="username" id="username">
+                    <input type="button" onclick="document.getElementById('username').disabled=true;document.getElementById('rest-form').style.display='initial';" value="Save" />
+                </div>
+                <hr>
+                <div id="rest-form" style="display: none;">
                 <h2>Section 1 - Personal Details</h2>
                 <div class="form-section" id="personal-details-section">
                     <label for="name">Name</label>
@@ -98,6 +105,7 @@
                 <hr>
                 <!-- <button onclick="submit();">Submit</button> -->
                 <input type="submit"/>
+            </div>
             </div>
         </form>
     </div>
