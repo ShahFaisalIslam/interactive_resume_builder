@@ -25,16 +25,6 @@ function toggleDetailsVisibility(id) {
         }
     }
 }
-const handleSubmit = () => {
-    const formElement = document.getElementById('form');
-    const resumeElement = document.getElementById('resume');
-    if (formElement && resumeElement) {
-        formElement.style.display = 'none';
-        formElement.style.minHeight = "0px";
-        buildResume();
-    }
-    return false;
-};
 const addSection = (parent, section) => {
     parent.appendChild(document.createElement('hr'));
     parent.appendChild(section);

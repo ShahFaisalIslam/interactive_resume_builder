@@ -4,10 +4,11 @@ const submitForm = () => {
     // Invalidate if any of the buttons is not saved
     let saveButtons = formContainer.querySelectorAll(".save-button");
     for (let button of saveButtons) {
-        if (button.value == "Save") {
-            alert("Please save all information before submitting!");
-            return false;
-        }
+        // if ((<HTMLInputElement>button).value == "Save") {
+        // alert("Please save all information before submitting!");
+        // return false;
+        // }
+        button.click();
     }
     formContainer = formContainer;
     formContainer.className = "slide-out-right";
@@ -15,8 +16,8 @@ const submitForm = () => {
         formContainer.remove();
         let titleElement = document.createElement('div');
         titleElement.id = "resume";
-        let bodyElement = document.getElementsByTagName('body')[0];
-        bodyElement.appendChild(titleElement);
+        document.body.appendChild(getShareButtons());
+        document.body.appendChild(titleElement);
         buildResume();
     }, 500);
     return false;

@@ -4,10 +4,11 @@ const submitForm = () => {
     // Invalidate if any of the buttons is not saved
     let saveButtons = formContainer.querySelectorAll(".save-button");
     for (let button of saveButtons) {
-        if ((<HTMLInputElement>button).value == "Save") {
-            alert("Please save all information before submitting!");
-            return false;
-        }
+        // if ((<HTMLInputElement>button).value == "Save") {
+            // alert("Please save all information before submitting!");
+            // return false;
+        // }
+        (<HTMLButtonElement>button).click();
     }
 
     formContainer = <HTMLElement>formContainer;
@@ -17,8 +18,8 @@ const submitForm = () => {
         let titleElement: HTMLElement = <HTMLElement>document.createElement('div');
         titleElement.id = "resume";
 
-        let bodyElement: HTMLElement = <HTMLElement>document.getElementsByTagName('body')[0];
-        bodyElement.appendChild(titleElement);
+        document.body.appendChild(getShareButtons());
+        document.body.appendChild(titleElement);
         buildResume();
     }, 500);
 

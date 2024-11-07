@@ -21,17 +21,6 @@ function toggleDetailsVisibility(id: string): void {
     }
 }
 
-const handleSubmit = () => {
-    const formElement = document.getElementById('form');
-    const resumeElement = document.getElementById('resume');
-    if (formElement && resumeElement) {
-        formElement.style.display = 'none';
-        formElement.style.minHeight = "0px";
-        buildResume();
-    }
-    return false;
-}
-
 const addSection = (parent: HTMLElement, section: HTMLElement) => {
     parent.appendChild(document.createElement('hr'));
     parent.appendChild(section);

@@ -27,8 +27,8 @@ const getElement = (data: ElementData) => {
 const getLabelledValueDiv = (id: string, label: string, value: string) => {
     let containerDiv = <HTMLDivElement>getElement({ tag: "div" });
 
-    let labelDiv = <HTMLDivElement> getElement({tag: "div",innerText: label});
-    let valueDiv = <HTMLDivElement> getElement({tag: "div",id : id, innerText: value, contentEditable: "true"});
+    let labelDiv = <HTMLDivElement>getElement({ tag: "div", innerText: label });
+    let valueDiv = <HTMLDivElement>getElement({ tag: "div", id: id, innerText: value, contentEditable: "true" });
 
     containerDiv.appendChild(labelDiv);
     containerDiv.appendChild(valueDiv);
@@ -61,18 +61,18 @@ interface SectionData {
     heading: string;
 }
 
-const getSection = (sectionData : SectionData) => {
-    let containerElement : HTMLDivElement = <HTMLDivElement> getElement({id: sectionData.id,tag: 'div'});
-    let bodyId : string = `${sectionData.id}-body`;
-    let headingElement = getHeadingElement(sectionData.heading,bodyId);
-    let bodyData : ElementData = {
+const getSection = (sectionData: SectionData) => {
+    let containerElement: HTMLDivElement = <HTMLDivElement>getElement({ id: sectionData.id, tag: 'div' });
+    let bodyId: string = `${sectionData.id}-body`;
+    let headingElement = getHeadingElement(sectionData.heading, bodyId);
+    let bodyData: ElementData = {
         id: bodyId,
         tag: 'div',
-        contentEditable: "true"        
+        contentEditable: "true"
     };
 
     let bodyElement = getElement(bodyData);
     containerElement.appendChild(headingElement);
     containerElement.appendChild(bodyElement);
-    return [containerElement,bodyElement];
+    return [containerElement, bodyElement];
 }
