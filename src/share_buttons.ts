@@ -1,5 +1,10 @@
 const shareLink = () => {
-    const link = window.location.href + "/resume/" + savedResumeData.username;
+
+    let link = window.location.href;
+    if (link[link.length - 1] == "/")
+        link += "resume/" + savedResumeData.username;
+    else
+        link += "/resume/" + savedResumeData.username;
     navigator.clipboard.writeText(link);
     alert("Link copied!");
 }
@@ -14,15 +19,15 @@ const downloadPdf = () => {
         button.style.display = "none";
     resume.style.width = "2480px";
     resume.style.height = "3508px";
-    window.html2canvas(resume).then((canvas : any) => {
+    window.html2canvas(resume).then((canvas: any) => {
         for (let button of buttons)
             button.style.display = "initial";
         resume.style.width = originalWidth;
         resume.style.height = originalHeight;
-        const {jsPDF} = window.jspdf;
+        const { jsPDF } = window.jspdf;
         const doc = new jsPDF();
         const imgData = canvas.toDataURL('image/png');
-        doc.addImage(imgData,'PNG',5,5);
+        doc.addImage(imgData, 'PNG', 5, 5);
         doc.save('resume.pdf');
     })
 }

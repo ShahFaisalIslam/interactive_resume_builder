@@ -1,6 +1,10 @@
 "use strict";
 const shareLink = () => {
-    const link = window.location.href + "/resume/" + savedResumeData.username;
+    let link = window.location.href;
+    if (link[link.length - 1] == "/")
+        link += "resume/" + savedResumeData.username;
+    else
+        link += "/resume/" + savedResumeData.username;
     navigator.clipboard.writeText(link);
     alert("Link copied!");
 };
